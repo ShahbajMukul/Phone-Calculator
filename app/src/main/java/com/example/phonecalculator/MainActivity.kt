@@ -37,7 +37,7 @@ class MainActivity : AppCompatActivity(), CalculatorListener {
         when (buttonText) {
             in "0".."9" -> handleNumber(buttonText)
             "." -> handleDecimal()
-            in listOf("+", "-", "*", "/", "%") -> handleOperator(buttonText)
+            in listOf("+", "—", "X", "/", "%") -> handleOperator(buttonText)
             "=" -> handleEquals()
             "C" -> handleClear() // clear everything
             "CE" -> handleClearEntry() // just the last entry
@@ -85,8 +85,8 @@ class MainActivity : AppCompatActivity(), CalculatorListener {
         if (operand1.isNotEmpty() && operand2.isNotEmpty() && operator.isNotEmpty()) {
             val result = when (operator) {
                 "+" -> operand1.toDouble() + operand2.toDouble()
-                "-" -> operand1.toDouble() - operand2.toDouble()
-                "*" -> operand1.toDouble() * operand2.toDouble()
+                "—" -> operand1.toDouble() - operand2.toDouble()
+                "X" -> operand1.toDouble() * operand2.toDouble()
                 "/" -> if (operand2.toDouble() != 0.0) operand1.toDouble() / operand2.toDouble() else Double.NaN // check to see if the user is not clicking divide before the first operand
                 "%" -> operand1.toDouble() % operand2.toDouble()
                 else -> 0.0

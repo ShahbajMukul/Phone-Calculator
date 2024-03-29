@@ -1,6 +1,7 @@
 package com.example.phonecalculator
 
 import android.content.Context
+import android.content.res.Configuration
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -27,6 +28,13 @@ class ButtonsFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
+
+        // check if in landscape or portrait and show appropriate layout for buttons
+        val layoutResId = if (resources.configuration.orientation == Configuration.ORIENTATION_LANDSCAPE) {
+            R.layout.fragment_buttons
+        } else {
+            R.layout.fragment_buttons
+        }
         _binding = FragmentButtonsBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -37,8 +45,8 @@ class ButtonsFragment : Fragment() {
         // Set click listeners for all buttons
         binding.apply {
             buttonAdd.setOnClickListener { onButtonClick("+") }
-            buttonSubtract.setOnClickListener { onButtonClick("-") }
-            buttonMultiply.setOnClickListener { onButtonClick("*") }
+            buttonSubtract.setOnClickListener { onButtonClick("—") }
+            buttonMultiply.setOnClickListener { onButtonClick("X") }
             buttonDivide.setOnClickListener { onButtonClick("/") }
             buttonMod.setOnClickListener { onButtonClick("%") }
 

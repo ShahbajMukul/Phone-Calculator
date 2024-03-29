@@ -5,19 +5,22 @@
     android:layout_height="match_parent"
     tools:context=".DisplayFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp">
 
         <TextView
             android:id="@+id/result_text_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="0362736257852"
+            android:text="@string/calcIntitalVal"
             android:textAlignment="textEnd"
-            android:textSize="48sp" />
+            android:textSize="48sp"
+            android:layout_gravity="center_vertical|end"
+            android:paddingHorizontal="16dp"/>
+
     </FrameLayout>
 
 </FrameLayout>
